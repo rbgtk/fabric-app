@@ -2,7 +2,7 @@ import { defineStore } from 'pinia'
 import { useStorage } from '@vueuse/core'
 import { ConnectOptions } from '@hyperledger/fabric-gateway'
 
-export const useConnectOptionsStore = defineStore('options', {
+export const useConnectionStore = defineStore('options', {
     state: () => ({
         activeConnection: undefined as ConnectOptions | undefined,
         connections: useStorage('connections', new Map<string, ConnectOptions>())

@@ -5,7 +5,7 @@ import Connections from '@renderer/views/Connections.vue'
 import Identities from '@renderer/views/Identities.vue'
 
 const routes = [
-    { path: '/', component: Dashboard },
+    { path: '/dashboard', component: Dashboard },
     { path: '/connections', component: Connections },
     { path: '/identities', component: Identities }
 ]

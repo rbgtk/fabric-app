@@ -1,27 +1,27 @@
 import { defineStore } from 'pinia'
 import { useStorage } from '@vueuse/core'
-import Connection from '@renderer/models/connection'
+import { ConnectOptions } from '@hyperledger/fabric-gateway'
 
-export const useConnectionStore = defineStore('connection', {
+export const useConnectOptionsStore = defineStore('options', {
     state: () => ({
-        activeConnection: undefined as Connection | undefined,
-        connections: useStorage('connections', new Map<string, Connection>())
+        activeConnection: undefined as ConnectOptions | undefined,
+        connections: useStorage('connections', new Map<string, ConnectOptions>())
     }),
 
     actions: {
-        addConnection(connection: Connection) {
-            this.connections.set(connection.name, connection)
+        addConnectOptions(key: string, options: ConnectOptions) {
+            this.connections.set(key, options)
         },
 
-        deleteConnection(name: string) {
-            if (this.connections.has(name)) {
-                this.connections.delete(name)
+        deleteConnectOptions(key: string) {
+            if (this.connections.has(key)) {
+                this.connections.delete(key)
             }
         },
 
-        selectConnection(name: string) {
-            if (this.connections.has(name)) {
-                this.activeConnection = this.connections.get(name)
+        selectConnection(key: string) {
+            if (this.connections.has(key)) {
+                this.activeConnection = this.connections.get(key)
             }
         }
     }

@@ -14,6 +14,9 @@
                     <li class="nav-item">
                         <router-link class="nav-link active" to="connections">Connections</router-link>
                     </li>
+                    <li class="nav-item">
+                        <router-link class="nav-link active" to="identities">Identities</router-link>
+                    </li>
                 </ul>
             </div>
         </div>

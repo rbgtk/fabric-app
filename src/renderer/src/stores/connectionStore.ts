@@ -4,7 +4,7 @@ import Connection from '@renderer/models/connection'
 
 export const useConnectionStore = defineStore('connection', {
     state: () => ({
-        activeConnection: '',
+        activeConnection: undefined as Connection | undefined,
         connections: useStorage('connections', new Map<string, Connection>())
     }),
 
@@ -14,14 +14,14 @@ export const useConnectionStore = defineStore('connection', {
         },
 
         deleteConnection(name: string) {
-            if (name !== this.activeConnection && this.connections.has(name)) {
+            if (this.connections.has(name)) {
                 this.connections.delete(name)
             }
         },
 
         selectConnection(name: string) {
             if (this.connections.has(name)) {
-                this.activeConnection = name
+                this.activeConnection = this.connections.get(name)
             }
         }
     }

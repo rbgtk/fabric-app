@@ -1,6 +1,6 @@
-# tmp
+# Fabric App
 
-An Electron application with Vue and TypeScript
+An Electron application with Vue and TypeScript for Hyperledger Fabric
 
 ## Recommended IDE Setup
 

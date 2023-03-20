@@ -1,17 +1,16 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-import Dashboard from '@renderer/views/Dashboard.vue'
-import Connections from '@renderer/views/Connections.vue'
-import Identities from '@renderer/views/Identities.vue'
+import Dashboard from './views/Dashboard.vue'
 
 const routes = [
-    { path: '/dashboard', component: Dashboard },
-    { path: '/connections', component: Connections },
-    { path: '/identities', component: Identities }
+    { path: '/', component: Dashboard }
 ]
 
-export default createRouter({
+const router = createRouter({
     history: createWebHistory(),
     linkActiveClass: 'active',
     routes: routes
 })
+
+
+export default router
